@@ -1,0 +1,52 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build site folder
+        env:
+          GUEST_LOOKUP_URL: ${{ secrets.GUEST_LOOKUP_URL }}
+        run: |
+          if [ -z "$GUEST_LOOKUP_URL" ]; then
+            echo "::warning::GUEST_LOOKUP_URL secret is not set — the page will run in demo mode."
+          fi
+
+          mkdir -p _site
+          cp index.html styles.css main.js config.js _site/
+          cp -r assets _site/
+
+          # Archivo privado generado a partir del secreto (nunca está en el repo)
+          printf 'window.INVITE_LOCAL = { guestLookupUrl: "%s" };\n' "$GUEST_LOOKUP_URL" > _site/config.local.js
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

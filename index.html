@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#faf6ef" />
+  <title>Ali &amp; Fernanda · Nuestra boda</title>
+  <meta name="description" content="Estás invitado a nuestra boda. Confirma tu asistencia aquí." />
+
+  <!-- Vista previa al compartir (WhatsApp, iMessage, etc.). Edita estos textos y agrega assets/og.jpg (1200×630). -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ali &amp; Fernanda · Nuestra boda" />
+  <meta property="og:description" content="Domingo 27 de diciembre de 2027 · Confirma tu asistencia" />
+  <meta property="og:image" content="assets/og.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <noscript><style>.envelope{display:none}body.is-locked{overflow:auto}</style></noscript>
+</head>
+<body class="is-locked">
+
+  <!-- ─── Sobre ─── -->
+  <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Abrir la invitación">
+    <div class="envelope__body">
+      <div class="envelope__back"></div>
+      <div class="envelope__letter">
+        <p class="envelope__to">Para <span id="envelopeName">ti</span></p>
+      </div>
+      <div class="envelope__pocket"></div>
+      <div class="envelope__flap"></div>
+      <div class="envelope__seal" data-f="couple.initials">F &amp; A</div>
+    </div>
+    <p class="envelope__hint">Toca para abrir</p>
+  </div>
+
+  <main id="invite">
+
+    <!-- ─── Hero ─── -->
+    <section class="hero">
+      <!-- 📷 Fotos definidas en config.js → images.hero / images.heroWide -->
+      <div class="hero__media" aria-hidden="true">
+        <picture>
+          <source id="heroWideSource" media="(min-width: 48rem)" />
+          <img id="heroImg" data-img="images.hero" alt="" fetchpriority="high" decoding="async" />
+        </picture>
+      </div>
+      <div class="hero__inner">
+        <p class="eyebrow" id="heroEyebrow">Con mucho cariño</p>
+        <h1 class="guest-name" id="guestName">¡Nos casamos!</h1>
+        <p class="lead" id="heroLead">Te invitamos a celebrar nuestra boda</p>
+        <p class="couple">
+          <span data-f="couple.a">Ali</span>
+          <span class="amp">&amp;</span>
+          <span data-f="couple.b">Fernanda</span>
+        </p>
+        <div class="divider" aria-hidden="true"><span></span>✦<span></span></div>
+        <p class="date" data-f="dateText">Sábado 20 de febrero de 2027</p>
+        <a href="#rsvp" class="btn btn--primary hero__cta">Confirmar asistencia</a>
+      </div>
+      <a href="#details" class="scroll-cue" aria-label="Ver detalles">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ─── Cuenta regresiva (usa config.js → start / end) ─── -->
+    <section class="section section--tint countdown-section" id="countdown" data-requires="showCountdown">
+      <div class="container">
+        <p class="eyebrow countdown__eyebrow reveal">Cuenta regresiva</p>
+        <h2 class="section__title reveal" id="countdownTitle">Faltan</h2>
+        <div class="countdown" id="countdownClock" role="timer" aria-label="Tiempo que falta para la boda">
+          <div class="countdown__unit"><span class="countdown__num" data-unit="days">0</span><span class="countdown__label" data-label="days">Días</span></div>
+          <div class="countdown__unit"><span class="countdown__num" data-unit="hours">00</span><span class="countdown__label" data-label="hours">Horas</span></div>
+          <div class="countdown__unit"><span class="countdown__num" data-unit="minutes">00</span><span class="countdown__label" data-label="minutes">Minutos</span></div>
+          <div class="countdown__unit"><span class="countdown__num" data-unit="seconds">00</span><span class="countdown__label" data-label="seconds">Segundos</span></div>
+        </div>
+        <p class="countdown__message" id="countdownMessage" hidden></p>
+      </div>
+    </section>
+
+    <!-- ─── Nuestra historia ─── -->
+    <section class="section story" id="story" data-requires="story">
+      <div class="container container--narrow">
+        <p class="eyebrow story__eyebrow reveal">Nuestra historia</p>
+        <h2 class="section__title reveal" data-f="story.title">Cómo empezó todo</h2>
+        <p class="story__text reveal" data-f="story.text"></p>
+      </div>
+      <!-- 📷 Fotos generadas desde config.js → story.photos -->
+      <div class="gallery" id="gallery" role="list" aria-label="Fotos de nuestra historia"></div>
+    </section>
+
+    <!-- ─── Detalles ─── -->
+    <section class="section section--tint" id="details">
+      <div class="container">
+        <h2 class="section__title reveal">Detalles</h2>
+        <div class="cards">
+          <article class="card card--venue card--photo reveal" data-requires="ceremony">
+            <img class="card__img" data-img="ceremony.photo" alt="" loading="lazy" decoding="async" />
+            <div class="card__body">
+              <p class="card__label">Ceremonia</p>
+              <p class="card__time" data-f="ceremony.time">4:00 PM</p>
+              <p class="card__venue" data-f="ceremony.venue"></p>
+              <p class="card__address" data-f="ceremony.address"></p>
+            </div>
+          </article>
+          <article class="card card--venue card--photo reveal" data-requires="reception">
+            <img class="card__img" data-img="reception.photo" alt="" loading="lazy" decoding="async" />
+            <div class="card__body">
+              <p class="card__label">Recepción</p>
+              <p class="card__time" data-f="reception.time">6:00 PM</p>
+              <p class="card__venue" data-f="reception.venue"></p>
+              <p class="card__address" data-f="reception.address"></p>
+            </div>
+          </article>
+          <article class="card card--wide reveal" data-requires="dressCode">
+            <p class="card__label">Código de vestimenta</p>
+            <p class="card__venue" data-f="dressCode"></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Franja con foto y frase ─── -->
+    <section class="band" data-requires="quote" aria-label="Frase">
+      <!-- 📷 Foto definida en config.js → images.band -->
+      <div class="band__media" aria-hidden="true">
+        <img data-img="images.band" alt="" loading="lazy" decoding="async" />
+      </div>
+      <blockquote class="band__quote">
+        <p data-f="quote.text"></p>
+        <cite data-f="quote.author"></cite>
+      </blockquote>
+    </section>
+
+    <!-- ─── Ubicación ─── -->
+    <section class="section" id="location">
+      <div class="container">
+        <h2 class="section__title reveal">Ubicación</h2>
+        <div class="btn-row reveal">
+          <a class="btn btn--primary" id="mapsLink" target="_blank" rel="noopener">Abrir en Google Maps</a>
+          <a class="btn btn--ghost" id="wazeLink" target="_blank" rel="noopener">Abrir en Waze</a>
+        </div>
+        <div class="map reveal">
+          <iframe id="mapFrame" title="Mapa de la ubicación" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="calendar reveal">
+          <p class="calendar__label">Guarda la fecha</p>
+          <div class="btn-row">
+            <a class="btn btn--ghost" id="gcalLink" target="_blank" rel="noopener">Google Calendar</a>
+            <a class="btn btn--ghost" id="icsLink" download="boda.ics">Apple / Outlook</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── RSVP ─── -->
+    <section class="section section--tint" id="rsvp">
+      <div class="container container--narrow">
+        <h2 class="section__title reveal" id="rsvpTitle">¿Nos acompañas?</h2>
+        <p class="rsvp__deadline reveal">Por favor confirma antes del <strong data-f="rsvpDeadline"></strong></p>
+
+        <div class="rsvp-card reveal">
+          <form id="rsvpForm" novalidate>
+            <div class="field" id="nameField" hidden>
+              <label for="nameInput">Tu nombre</label>
+              <input type="text" id="nameInput" name="name" autocomplete="name" maxlength="80" />
+              <p class="field__error" id="nameError" hidden>Escribe tu nombre para confirmar.</p>
+            </div>
+
+            <div class="plus-one" id="plusOneBlock">
+              <label class="switch">
+                <span class="switch__text">Llevaré acompañante (+1)</span>
+                <input type="checkbox" id="plusOneToggle" />
+                <span class="switch__track" aria-hidden="true"><span class="switch__thumb"></span></span>
+              </label>
+              <div class="plus-one__field" id="plusOneField" aria-hidden="true">
+                <div class="field">
+                  <label for="plusOneName">Nombre de tu acompañante <span class="muted">(opcional)</span></label>
+                  <input type="text" id="plusOneName" maxlength="80" autocomplete="off" />
+                </div>
+              </div>
+            </div>
+
+            <div class="rsvp__actions">
+              <button type="submit" class="btn btn--primary btn--block btn-confirm" id="confirmBtn">
+                <span class="btn__label">Confirmar</span>
+                <svg class="btn-confirm__check" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+              </button>
+              <button type="button" class="link-btn" id="declineBtn">No podré asistir</button>
+            </div>
+            <p class="form__error" id="formError" role="alert" hidden>No pudimos enviar tu respuesta. Revisa tu conexión e intenta de nuevo.</p>
+          </form>
+
+          <div class="rsvp__done" id="rsvpDone" hidden aria-live="polite">
+            <p class="rsvp__done-title" id="doneTitle"></p>
+            <p class="rsvp__done-text" id="doneText"></p>
+            <button type="button" class="link-btn" id="changeBtn">Cambiar mi respuesta</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p class="footer__couple"><span data-f="couple.initials">A &amp; F</span></p>
+      <p class="muted" data-f="dateText"></p>
+    </footer>
+  </main>
+
+  <div class="sticky-cta" id="stickyCta">
+    <a href="#rsvp" class="btn btn--primary btn--block">Confirmar asistencia</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" defer></script>
+  <script src="config.js" defer></script>
+  <script src="config.local.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>
