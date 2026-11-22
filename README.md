@@ -64,9 +64,9 @@ the full list never reaches the browser. Edits in the Sheet apply instantly — 
 
 | A: Codigo | B: Nombre | C: PlusOne (checkbox) | D: Sobre (optional) | E: Link (optional) |
 |---|---|---|---|---|
-| a3f9c | Billi Ramírez | ☑ | | `="https://your-site.netlify.app/?g="&A2` |
-| 34aef | Billi y Suleydi | ☐ | | … |
-| f4m11 | Ramírez Sequeira | ☐ | Familia Ramírez Sequeira | … |
+| a3f9c | John Doe | ☑ | | `="https://your-site.netlify.app/?g="&A2` |
+| 34aef | Kaladin Stormblessed | ☐ | | … |
+| f4m11 | Paul Atraides | ☐ | Familia Atraides | … |
 
 - **Sobre** (optional column, any position): text for the envelope. Empty → the full `Nombre`.
 - **Couples & families**: if the name (or Sobre) contains " y " / " & " or starts with "Familia", the page switches
