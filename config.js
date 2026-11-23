@@ -56,7 +56,7 @@ window.INVITE = {
 
   // Pon reception: null si no hay recepción aparte
   reception: {
-    time: "7:30 PM",
+    time: "7:00 PM",
     venue: "Casa Jardin",
     address: "Club Campestre Las Colinas 3.5c. arriba. Casa #296, Managua",
     photo: { src: "assets/photos/casa-jardin.jpg", alt: "Casa Jardin Eventos" }, // 16:10, 1200×750
@@ -72,7 +72,17 @@ window.INVITE = {
     embedSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.2674166805564!2d-86.22646689999999!3d12.093836499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f73fe4d55729123%3A0x9bfa97f966c907f!2sCasa%20Jardin%20Eventos!5e0!3m2!1ses!2sni!4v1795369519334!5m2!1ses!2sni",
   },
 
-  rsvpDeadline: "15 de enero de 2027",
+  rsvpDeadline: "10 de diciembre de 2026",
+
+  /**
+   * Regalo: se muestra en la sección de confirmación. Pon regalo: null para ocultarlo.
+   * messagePlural (opcional) se usa para parejas y familias.
+   */
+  regalo: {
+    title: "Regalo",
+    message: "Tu presencia es nuestro mejor regalo. Si deseas tener un detalle con nosotros, te agradeceremos que sea en efectivo: el día de la boda habrá una caja para sobres en la recepción.",
+    messagePlural: "Su presencia es nuestro mejor regalo. Si desean tener un detalle con nosotros, les agradeceremos que sea en efectivo: el día de la boda habrá una caja para sobres en la recepción.",
+  },
 
   /**
    * Las respuestas se guardan en tu Google Sheet (pestaña "Respuestas") a través de

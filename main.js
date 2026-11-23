@@ -454,6 +454,7 @@
       $("#heroLead").textContent = plural ? "los invitamos a celebrar nuestra boda" : "te invitamos a celebrar nuestra boda";
       if (plural) {
         $("#rsvpTitle").textContent = "¿Nos acompañan?";
+        if (C.regalo?.messagePlural && $("#giftMessage")) $("#giftMessage").textContent = C.regalo.messagePlural;
         $("#declineBtn").textContent = "No podremos asistir";
       }
       if (!g.plusOne) plusBlock?.remove();

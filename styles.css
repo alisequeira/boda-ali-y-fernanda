@@ -21,6 +21,12 @@
   --envelope-flap: #687f6b;   /* solapa */
   --envelope-flap-shade: #5c7160;
 
+  /* Sello del sobre (plateado) */
+  --seal-light: #f4f5f7;
+  --seal-mid: #c9ccd1;
+  --seal-dark: #8e939a;
+  --seal-text: #4a4f56;
+
   --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --font-body: "Jost", system-ui, -apple-system, "Segoe UI", sans-serif;
 
@@ -187,9 +193,13 @@ img, svg, iframe { display: block; max-width: 100%; }
   height: 68px;
   margin: -34px 0 0 -34px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #cfac72, #9a7542 75%);
-  box-shadow: 0 6px 14px -4px rgba(80, 55, 20, 0.5), inset 0 0 0 4px rgba(255, 255, 255, 0.12);
-  color: #fffaf0;
+  background: radial-gradient(circle at 35% 30%, var(--seal-light), var(--seal-mid) 45%, var(--seal-dark) 80%);
+  box-shadow:
+    0 6px 14px -4px rgba(30, 35, 40, 0.45),
+    inset 0 0 0 4px rgba(255, 255, 255, 0.35),
+    inset 0 -3px 6px rgba(60, 65, 72, 0.25);
+  color: var(--seal-text);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6); /* efecto grabado */
   font-family: var(--font-display);
   font-size: 1.05rem;
   font-weight: 500;
@@ -596,6 +606,25 @@ input[aria-invalid="true"] { border-color: var(--error); }
   stroke-dashoffset: 24;
 }
 .btn-confirm[disabled] { cursor: default; }
+
+.gift {
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  padding: 1.5rem 1.25rem;
+  border: 1px dashed var(--gold-soft);
+  border-radius: var(--radius);
+  text-align: center;
+}
+.gift__icon { width: 34px; height: 34px; color: var(--gold); }
+.gift__title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.gift__message { color: var(--muted); text-wrap: pretty; }
 
 .rsvp__done { text-align: center; padding: 0.5rem 0; }
 .rsvp__done-title {
