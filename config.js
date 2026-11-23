@@ -80,8 +80,8 @@ window.INVITE = {
    */
   regalo: {
     title: "Regalo",
-    message: "Tu presencia es nuestro mejor regalo. Si deseas tener un detalle con nosotros, te agradeceremos que sea en efectivo: el día de la boda habrá una caja para sobres en la recepción.",
-    messagePlural: "Su presencia es nuestro mejor regalo. Si desean tener un detalle con nosotros, les agradeceremos que sea en efectivo: el día de la boda habrá una caja para sobres en la recepción.",
+    message: "Nuestro mejor regalo es tu presencia, pero si tu deseo es tener un detalle puedes hacerlo dentro de un sobre.",
+    messagePlural: "Nuestro mejor regalo es su presencia, pero si su deseo es tener un detalle pueden hacerlo dentro de un sobre.",
   },
 
   /**
