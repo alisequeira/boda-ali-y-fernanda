@@ -36,13 +36,14 @@ window.INVITE = {
 
   // Sección "Nuestra historia". Pon story: null para ocultarla.
   // Puedes poner las fotos que quieras (verticales 4:5, 1080×1350).
+  // Caption (optional) text que se mostrara abajo de la image.
   story: {
     title: "Cómo empezó todo",
-    text: "Nos conocimos una tarde cualquiera que terminó siendo la más importante. Desde entonces hemos compartido viajes, risas y sueños, y ahora queremos celebrar el siguiente capítulo contigo.",
+    text: "Hace once años nuestros caminos se cruzaron sin imaginar todo lo que viviríamos. Entre sueños, aprendizajes y recuerdos, seguimos eligiéndonos para comenzar nuestro capítulo más bonito.",
     photos: [
-      { src: "assets/photos/story-1.jpg", alt: "Ana y Luis el día que se conocieron", caption: "2019 · El día que nos conocimos" },
-      { src: "assets/photos/story-2.jpg", alt: "Ana y Luis de viaje", caption: "2022 · Nuestro primer viaje" },
-      { src: "assets/photos/story-3.jpg", alt: "La propuesta de matrimonio", caption: "2026 · ¡Dijo que sí!" },
+      { src: "assets/photos/galery-1.jpg", alt: "foto fer y ali sentados", caption: "" },
+      { src: "assets/photos/story-2.jpg", alt: "", caption: "" },
+      { src: "assets/photos/story-3.jpg", alt: "", caption: "" },
     ],
   },
 
