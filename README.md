@@ -95,9 +95,10 @@ If you later **change the script code**: Implementar → Gestionar implementacio
 (the URL stays the same). Editing the Sheet itself never needs this.
 
 **Behavior**
-- `?g=CODE` found → personalized invitation; +1 toggle only if PlusOne is checked.
-- Unknown code, or Google unreachable → generic invitation that asks for the guest's name.
-- `?guest=Name` links still work (+1 per `defaultAllowPlusOne`).
+- `?g=CODE` found → personalized invitation **with the RSVP section**; +1 toggle only if PlusOne is checked.
+- No code, unknown code, or Google unreachable → generic invitation **without RSVP** (no form, no
+  "Confirmar asistencia" buttons). Only guests with a valid code can respond.
+- `?guest=Name` links personalize the greeting but also show no RSVP (they have no code).
 - While `guestLookupUrl` is empty, the local `guests` list in `config.js` is used (handy for testing).
 
 ## 4. Run locally

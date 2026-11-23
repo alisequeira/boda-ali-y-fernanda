@@ -427,8 +427,22 @@
 
   /* ───────────────────────── Apply guest ───────────────────────── */
 
+  // Sin código válido en la URL → no se muestra la sección de confirmación
+  function removeRsvp() {
+    const section = $("#rsvp");
+    if (hasScroll && section) {
+      window.ScrollTrigger.getAll().forEach((st) => {
+        if (st.trigger && section.contains(st.trigger)) st.kill(true);
+      });
+    }
+    section?.remove();
+    stickyCta?.remove();
+    $$('a[href="#rsvp"]').forEach((a) => a.remove()); // botón "Confirmar asistencia" del hero
+  }
+
   function applyGuest(g) {
     guest = g;
+    const canRsvp = !!(g && g.code);
     plural = !!g && (isGroup(g.name) || isGroup(g.envelope || ""));
     firstName = g ? (plural ? g.envelope || g.name : g.name.split(/\s+/)[0]) : "";
 
@@ -447,6 +461,12 @@
       nameField.hidden = false;
     }
 
+    if (!canRsvp) {
+      removeRsvp();
+      return;
+    }
+
+    setupStickyCta();
     const saved = store.get();
     if (saved) showDone(saved, { animated: false });
   }
@@ -706,7 +726,9 @@
   // Recalcular posiciones cuando terminen de cargar las fotos
   window.addEventListener("load", () => hasScroll && window.ScrollTrigger.refresh());
 
-  if (hasScroll) {
+  // Botón fijo "Confirmar asistencia" (móvil). Solo se activa para invitados con código.
+  function setupStickyCta() {
+    if (!hasScroll || !$("#rsvp")) return;
     window.ScrollTrigger.create({
       trigger: ".hero",
       start: "bottom top+=60",

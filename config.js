@@ -103,12 +103,4 @@ window.INVITE = {
    */
   guestLookupUrl: "",
 
-  /**
-   * Lista local SOLO para pruebas: se usa mientras guestLookupUrl esté vacío.
-   * Cuando conectes la hoja, puedes borrar estos ejemplos.
-   */
-  guests: {
-    m4r1: { name: "María López", plusOne: true },
-    j0s3: { name: "José Martínez", plusOne: false },
-  },
 };
