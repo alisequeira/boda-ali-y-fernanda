@@ -42,8 +42,8 @@ window.INVITE = {
     text: "Hace once años nuestros caminos se cruzaron sin imaginar todo lo que viviríamos. Entre sueños, aprendizajes y recuerdos, seguimos eligiéndonos para comenzar nuestro capítulo más bonito.",
     photos: [
       { src: "assets/photos/galery-1.jpg", alt: "foto fer y ali sentados", caption: "" },
-      { src: "assets/photos/story-2.jpg", alt: "", caption: "" },
-      { src: "assets/photos/story-3.jpg", alt: "", caption: "" },
+      { src: "assets/photos/galery-2.jpg", alt: "foto fer y ali de frente", caption: "" },
+      { src: "assets/photos/galery-3.jpg", alt: "foto fer y ali caminando", caption: "" },
     ],
   },
 
